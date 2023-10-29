@@ -1,9 +1,9 @@
 from custom_rules.permission import Permission
 from vkbottle.user import Message
-from config import bl, edit_message
+from config import bl, edit_message, prefix_bot
 
 
-@bl.message(Permission(), text="бот")
+@bl.message(Permission(), text=[prefix_bot + " бот"])
 async def hello(message: Message):
     await edit_message(
         message,

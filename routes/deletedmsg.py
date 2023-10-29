@@ -1,7 +1,7 @@
 import datetime
 from custom_rules.permission import Permission
 from vkbottle.user import Message
-from config import bl, user
+from config import bl, user, prefix_dd
 
 DD_SCRIPT = (
     'var i = 0;var msg_ids = [];var count = %d;'
@@ -14,12 +14,10 @@ DD_SCRIPT = (
     'API.messages.delete({"message_ids": msg_ids});return count;'
 )
 
-prefix = "дд"
-
 
 @bl.message(
     Permission(),
-    text=[prefix + " <count:int>"],
+    text=[prefix_dd + " <count:int>"],
 )
 async def dd_handler(message: Message, count: int = 2):
     await user.api.execute(

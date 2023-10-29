@@ -1,10 +1,13 @@
 import asyncio
 from vkbottle.user import Message
-from config import bl, edit_message
+from config import bl, edit_message, prefix_bot
 from custom_rules.permission import Permission
 
 
-@bl.message(Permission(), text="игра")
+@bl.message(
+    Permission(),
+    text=[prefix_bot + " игра"],
+)
 async def game(message: Message):
     loader = (
         '⬜⬜⬜⬜⬜⬜⬜⬜⬛⬛⬜⬜⬜⬜⬜⬜⬜',

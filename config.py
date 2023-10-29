@@ -7,6 +7,9 @@ bl = UserLabeler()
 user = User(token=TOKEN)
 
 
+prefix_bot = "хуй"
+prefix_dd = "дд"
+
 async def edit_message(
         message: Message,
         text: str = '',
