@@ -17,32 +17,32 @@ DD_SCRIPT = (
 
 
 @bl.message(
-    Permission(),
-    text=[prefix_dd + " <count:int>"],
+        Permission(),
+        text=[prefix_dd + " <count:int>"],
 )
 async def dd_handler(message: Message, count: int = 2):
     await user.api.execute(
-        DD_SCRIPT % (
-            count,
-            message.peer_id,
-            message.from_id,
-            int(datetime.datetime.now().timestamp())
-        )
+            DD_SCRIPT % (
+                count,
+                message.peer_id,
+                message.from_id,
+                int(datetime.datetime.now().timestamp())
+            )
     )
 
 
 @bl.message(
-    Permission(),
-    text=["все", "всё"],
+        Permission(),
+        text=["все", "всё"],
 )
 async def dd_all_handler(message: Message):
     count = 1000
 
     await user.api.execute(
-        DD_SCRIPT % (
-            count,
-            message.peer_id,
-            message.from_id,
-            int(datetime.datetime.now().timestamp())
-        )
+            DD_SCRIPT % (
+                count,
+                message.peer_id,
+                message.from_id,
+                int(datetime.datetime.now().timestamp())
+            )
     )

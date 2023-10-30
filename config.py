@@ -1,4 +1,5 @@
 from vkbottle.user import Message
+
 from main import user
 
 TOKEN = "test"
@@ -19,5 +20,5 @@ async def edit_message(
     kwargs.setdefault('dont_parse_links', False)
 
     return await user.api.messages.edit(
-        **kwargs
+            **kwargs
     )

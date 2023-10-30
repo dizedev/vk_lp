@@ -1,5 +1,6 @@
 from loguru import logger
-from sqlalchemy import select, update
+from sqlalchemy import select
+
 import db
 
 

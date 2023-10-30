@@ -1,15 +1,16 @@
 import asyncio
+
 from vkbottle.user import Message, UserLabeler
+
 from config import prefix_bot, edit_message
 from custom_rules.permission import Permission
-
 
 bl = UserLabeler(custom_rules=Permission)
 
 
 @bl.message(
-    Permission(),
-    text=[prefix_bot + " игра"],
+        Permission(),
+        text=[prefix_bot + " игра"],
 )
 async def game(message: Message):
     loader = (

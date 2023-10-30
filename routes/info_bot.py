@@ -1,11 +1,10 @@
-import pytz
 import git
-
-from custom_rules.permission import Permission
+import pytz
 from vkbottle.user import Message, UserLabeler
-from config import edit_message, prefix_bot
-from utils import rewards_list
 
+from config import edit_message, prefix_bot
+from custom_rules.permission import Permission
+from utils import rewards_list
 
 bl = UserLabeler(custom_rules=Permission)
 

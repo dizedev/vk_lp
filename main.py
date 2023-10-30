@@ -1,9 +1,11 @@
 import asyncio
 import sys
+
+from loguru import logger
 from vkbottle.user import User
+
 import db.requests
 from routes import labelers
-from loguru import logger
 
 logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 user = None
