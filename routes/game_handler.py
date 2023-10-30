@@ -77,7 +77,7 @@ async def game(message: Message):
         ⬜⬜⬜⬜⬛✊✊✊✊✊✊✊✊✊✊✊⬛
         ⬜⬜⬜⬜⬜⬛✊✊✊✊✊✊✊✊✊⬛⬜
         ⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜
-        """,
+        """
     )
 
     for new_text in loader:

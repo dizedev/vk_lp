@@ -1,7 +1,7 @@
 import datetime
 from custom_rules.permission import Permission
 from vkbottle.user import Message
-from config import bl, user, prefix_dd
+from config import bl, user, prefix_dd, prefix_bot
 
 DD_SCRIPT = (
     'var i = 0;var msg_ids = [];var count = %d;'
@@ -32,7 +32,7 @@ async def dd_handler(message: Message, count: int = 2):
 
 @bl.message(
     Permission(),
-    text=["все", "всё"],
+    text=[prefix_bot + " все"],
 )
 async def dd_all_handler(message: Message):
     count = 1000
