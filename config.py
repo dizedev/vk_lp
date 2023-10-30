@@ -1,7 +1,6 @@
 from vkbottle.user import UserLabeler, Message, User
 
 bl = UserLabeler()
-
 user = User(token=TOKEN)
 
 
