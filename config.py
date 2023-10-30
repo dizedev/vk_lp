@@ -1,6 +1,5 @@
 from vkbottle.user import UserLabeler, Message, User
 
-TOKEN = 'vk1.a.4nNdLuOJin9tn71J-cKGu6MKCR2rNHkdRPn4lbW28CS9aL0Q-rhG3ZQi6UQnV9ClpBrNp2obRUltWREoSuwz2Km7OXGlBaP3jt9KsEeut4N3OvHWoTUuqNEtiRrgz2koSrPXLEJZ8i974KD2CgXWqmX4IsSC3kCMDK_aS1xetU3S38-Z1JFyNZu5Tl8yUGopptCjEqA9jF8CjznWv1gC2A'
 # unsafe use, get token from db (multibot)
 
 bl = UserLabeler()
