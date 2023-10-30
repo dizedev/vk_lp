@@ -1,11 +1,13 @@
 from vkbottle.user import UserLabeler, Message, User
 
+TOKEN = "test"
 bl = UserLabeler()
 user = User(token=TOKEN)
 
 
 prefix_bot = "хуй"
 prefix_dd = "дд"
+
 
 async def edit_message(
         message: Message,
