@@ -3,7 +3,6 @@ from vkbottle.user import Message
 from config import bl, edit_message,  prefix_bot
 from utils import rewards_list
 
-
 listToStr = ' '.join(map(str, rewards_list))
 
 
