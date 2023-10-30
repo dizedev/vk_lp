@@ -2,7 +2,7 @@ import asyncio
 
 from custom_rules.permission import Permission
 from vkbottle.user import Message
-from vkbottle.dispatch.views.abc.message import bl, edit_message, prefix_bot, user
+from config import bl, edit_message, prefix_bot, user
 from utils import rewards_list
 
 
