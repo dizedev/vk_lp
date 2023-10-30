@@ -1,9 +1,10 @@
 from custom_rules.permission import Permission
-from vkbottle.user import Message
-from config import bl, edit_message,  prefix_bot
+from vkbottle.user import Message, UserLabeler
+from config import edit_message, prefix_bot
 from utils import rewards_list
 
 listToStr = ' '.join(map(str, rewards_list))
+bl = UserLabeler(custom_rules=Permission)
 
 
 @bl.message(Permission(), text=[prefix_bot + " достижения"])

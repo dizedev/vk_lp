@@ -1,10 +1,7 @@
-from vkbottle.user import UserLabeler, Message, User
+from vkbottle.user import Message
+from main import user
 
 TOKEN = "test"
-bl = UserLabeler()
-user = User(token=TOKEN)
-
-
 prefix_bot = "хуй"
 prefix_dd = "дд"
 

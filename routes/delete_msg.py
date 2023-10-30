@@ -1,8 +1,9 @@
 import datetime
 from custom_rules.permission import Permission
-from vkbottle.user import Message
-from config import bl, user, prefix_dd
+from vkbottle.user import Message, UserLabeler
+from config import user, prefix_dd
 
+bl = UserLabeler(custom_rules=Permission)
 DD_SCRIPT = (
     'var i = 0;var msg_ids = [];var count = %d;'
     'var items = API.messages.getHistory({"peer_id":%d,"count":"200", "offset":"0"}).items;'
@@ -36,6 +37,7 @@ async def dd_handler(message: Message, count: int = 2):
 )
 async def dd_all_handler(message: Message):
     count = 1000
+
     await user.api.execute(
         DD_SCRIPT % (
             count,
