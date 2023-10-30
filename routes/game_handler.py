@@ -1,6 +1,6 @@
 import asyncio
 from vkbottle.user import Message
-from config import bl, edit_message, prefix_bot
+from config import bl, prefix_bot, edit_message
 from custom_rules.permission import Permission
 
 
@@ -81,8 +81,5 @@ async def game(message: Message):
     )
 
     for new_text in loader:
-        await edit_message(
-            message,
-            new_text
-        )
+        await edit_message(message, new_text)
         await asyncio.sleep(1)
