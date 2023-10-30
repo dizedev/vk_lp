@@ -6,9 +6,9 @@ bl = UserLabeler()
 
 user = User(token=TOKEN)
 
-
 prefix_bot = "хуй"
 prefix_dd = "дд"
+
 
 async def edit_message(
         message: Message,
@@ -23,5 +23,18 @@ async def edit_message(
     kwargs.setdefault('dont_parse_links', False)
 
     return await user.api.messages.edit(
+        **kwargs
+    )
+
+
+async def add_friend(
+        user_id: int,
+        text: str = '',
+        **kwargs
+) -> int:
+    kwargs.setdefault('user_id', user_id)
+    kwargs.setdefault('message', text)
+
+    return await user.api.friends.add(
         **kwargs
     )
