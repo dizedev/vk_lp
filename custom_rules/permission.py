@@ -1,6 +1,7 @@
+import json
+
 from vkbottle.dispatch.rules import ABCRule
 from vkbottle.user import Message
-import json
 
 
 def load_trusted_ids():

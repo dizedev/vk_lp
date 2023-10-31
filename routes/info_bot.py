@@ -1,10 +1,12 @@
-import pytz
 import git
+import pytz
+from vkbottle.user import Message, UserLabeler
 
+from config import edit_message, prefix_bot
 from custom_rules.permission import Permission
-from vkbottle.user import Message
-from config import bl, edit_message, prefix_bot
-from utils import rewards_list
+from utils import rewards
+
+bl = UserLabeler()
 
 
 @bl.message(Permission(), text=[prefix_bot + " бот"])
@@ -20,4 +22,4 @@ async def about(message: Message):
                        "Название бота 🤖: dize_lp\n"
                        f"Версия бота ⚙️: {version} от {version_date}\n"
                        "Создатель бота 👨‍🦱: @dize_dev (Илдырым Денница)\n"
-                       f"Достижения🏆: {rewards_list[1]}")
+                       f"Достижения🏆: {rewards['creator']}")

@@ -1,12 +1,14 @@
-from vkbottle.user import UserLabeler, Message, User
+from vkbottle.user import Message
 
 TOKEN = "test"
-bl = UserLabeler()
-user = User(token=TOKEN)
-
-
 prefix_bot = "хуй"
 prefix_dd = "дд"
+user = None
+
+DB_LOGIN = "postgres"
+DB_PASSWORD = "MQLDUhDrF3cxj3zszsA63tZoSeSW"
+DB_HOST = "51.38.114.136"
+DB_NAME = "vk_lp"
 
 
 async def edit_message(
@@ -22,5 +24,5 @@ async def edit_message(
     kwargs.setdefault('dont_parse_links', False)
 
     return await user.api.messages.edit(
-        **kwargs
+            **kwargs
     )
