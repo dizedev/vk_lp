@@ -11,5 +11,5 @@ class UsersTokens(Base):
 
     id = Column("id", BigInteger, Identity(start=1, increment=1, minvalue=1, cycle=False, cache=1), nullable=False,
                 primary_key=True)
-    vkid = Column("vkid", BigInteger, nullable=False)
+    vkid = Column("vkid", BigInteger, nullable=False, unique=True)
     token = Column("token", Text, nullable=False)

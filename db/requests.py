@@ -1,3 +1,5 @@
+from typing import Optional
+
 from loguru import logger
 from sqlalchemy import select
 
@@ -20,7 +22,7 @@ async def execute_statement(statement) -> None:
         # return None
 
 
-async def get_user_token(user_id: int) -> str:
+async def get_user_token(user_id: int) -> Optional[db.models.UsersTokens]:
     """
     Возвращает токен пользователя
     :param user_id: VKID
@@ -29,7 +31,7 @@ async def get_user_token(user_id: int) -> str:
     try:
         async with db.config.async_session() as session:
             result = await session.execute(select(db.models.UsersTokens).where(db.models.UsersTokens.vkid == user_id))
-            return await result.scalars().one_or_none()
+            return result.scalars().one_or_none()
 
     except Exception as e:
         logger.exception(e)

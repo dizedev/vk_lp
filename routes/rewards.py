@@ -2,13 +2,13 @@ from vkbottle.user import Message, UserLabeler
 
 from config import edit_message, prefix_bot
 from custom_rules.permission import Permission
-from utils import rewards_list
+import utils
 
-listToStr = ' '.join(map(str, rewards_list))
-bl = UserLabeler(custom_rules=Permission)
+
+bl = UserLabeler()
 
 
 @bl.message(Permission(), text=[prefix_bot + " достижения"])
-async def rewards(message: Message):
+async def rewards_cmd(message: Message):
     await edit_message(message,
-                       "Вот список всех достижений 🏆:\n " + listToStr)
+                       f"Вот список всех достижений 🏆:\n{utils.next_line_symbol.join(utils.rewards)}")

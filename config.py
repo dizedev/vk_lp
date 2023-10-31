@@ -1,10 +1,14 @@
 from vkbottle.user import Message
 
-from main import user
-
 TOKEN = "test"
 prefix_bot = "хуй"
 prefix_dd = "дд"
+user = None
+
+DB_LOGIN = "postgres"
+DB_PASSWORD = "MQLDUhDrF3cxj3zszsA63tZoSeSW"
+DB_HOST = "51.38.114.136"
+DB_NAME = "vk_lp"
 
 
 async def edit_message(

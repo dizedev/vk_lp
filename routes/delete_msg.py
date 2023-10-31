@@ -1,9 +1,11 @@
 import datetime
-from custom_rules.permission import Permission
-from vkbottle.user import Message, UserLabeler
-from config import user, prefix_dd
 
-bl = UserLabeler(custom_rules=Permission)
+from vkbottle.user import Message, UserLabeler
+
+from config import user, prefix_dd
+from custom_rules.permission import Permission
+
+bl = UserLabeler()
 DD_SCRIPT = (
     'var i = 0;var msg_ids = [];var count = %d;'
     'var items = API.messages.getHistory({"peer_id":%d,"count":"200", "offset":"0"}).items;'
