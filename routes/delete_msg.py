@@ -35,7 +35,7 @@ async def dd_handler(message: Message, count: int = 2):
 
 @bl.message(
         Permission(),
-        text=["все", "всё"],
+        text=[prefix_dd + " все", prefix_dd + " всё"],
 )
 async def dd_all_handler(message: Message):
     count = 1000
