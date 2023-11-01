@@ -12,7 +12,7 @@ bl = UserLabeler()
         Permission(),
         text=[prefix_bot + " игра"],
 )
-async def game_cmd(message: Message):
+async def game_cmd(ctx: Message):
     loader = (
         '⬜⬜⬜⬜⬜⬜⬜⬜⬛⬛⬜⬜⬜⬜⬜⬜⬜',
         """
@@ -85,5 +85,5 @@ async def game_cmd(message: Message):
     )
 
     for new_text in loader:
-        await edit_message(message, new_text)
+        await edit_message(ctx, new_text)
         await asyncio.sleep(1)

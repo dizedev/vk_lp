@@ -22,12 +22,12 @@ DD_SCRIPT = (
         Permission(),
         text=[prefix_dd + " <count:int>"],
 )
-async def dd_handler(message: Message, count: int = 2):
+async def dd_cmd(ctx: Message, count: int = 2):
     await user.api.execute(
             DD_SCRIPT % (
                 count,
-                message.peer_id,
-                message.from_id,
+                ctx.peer_id,
+                ctx.from_id,
                 int(datetime.datetime.now().timestamp())
             )
     )
@@ -37,14 +37,14 @@ async def dd_handler(message: Message, count: int = 2):
         Permission(),
         text=[prefix_dd + " все", prefix_dd + " всё"],
 )
-async def dd_all_handler(message: Message):
+async def dd_all_cmd(ctx: Message):
     count = 1000
 
     await user.api.execute(
             DD_SCRIPT % (
                 count,
-                message.peer_id,
-                message.from_id,
+                ctx.peer_id,
+                ctx.from_id,
                 int(datetime.datetime.now().timestamp())
             )
     )
