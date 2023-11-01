@@ -1,25 +1,23 @@
-import git
-import pytz
-from vkbottle.user import Message, UserLabeler
-
-from config import edit_message, prefix_bot
 from custom_rules.permission import Permission
-from utils import rewards
-
-bl = UserLabeler()
+from vkbottle.user import Message
+from config import bl, edit_message, prefix_bot, user
 
 
 @bl.message(Permission(), text=[prefix_bot + " бот"])
-async def about(message: Message):
-    repo = git.Repo(search_parent_directories=True)
-    version = repo.head.object.hexsha[:7]
-    version_date = repo.head.object.committed_datetime.astimezone(pytz.timezone("Europe/Moscow"))
+async def about_bot(message: Message):
+    peer_id = message.peer_id
 
-    f'Текущая версия бота: {version} от {version_date}'
+    # await edit_message(message,
+    #                    f"Информация о боте 🤖:\n\n Название бота 🤖: Impulse LP\n c\n Создатель бота 👨‍🦱: @dize_dev(Илдырым Денница)\n Достижения🏆: {rewards_list[1]}")
+    # await asyncio.sleep(0.5)
+    await edit_message(
+        message,
+        " ")
 
-    await edit_message(message,
-                       "Информация о боте 🤖:\n\n"
-                       "Название бота 🤖: dize_lp\n"
-                       f"Версия бота ⚙️: {version} от {version_date}\n"
-                       "Создатель бота 👨‍🦱: @dize_dev (Илдырым Денница)\n"
-                       f"Достижения🏆: {rewards['creator']}")
+    await user.api.messages.send(
+        peer_id=peer_id,
+        random_id=0,
+        attachment="photo-202995525_457239051"
+
+
+    )

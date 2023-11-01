@@ -5,7 +5,7 @@ import utils
 from config import edit_message, prefix_bot
 from custom_rules.permission import Permission
 
-bl = UserLabeler()
+listToStr = ' '.join(map(str, rewards_list))
 
 
 @bl.message(Permission(), text=[prefix_bot + " достижения"])

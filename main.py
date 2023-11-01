@@ -7,6 +7,7 @@ from vkbottle.user import User
 import config
 import db
 
+
 logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 
 
