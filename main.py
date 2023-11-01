@@ -13,6 +13,7 @@ logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", le
 async def main():
     from routes import labelers
 
+    # 368658177 - Ildyrym | 304398797 - Alex
     user_info = await db.requests.get_user_token(304398797)
     if not user_info:
         logger.error("user don't have a token in db!")

@@ -7,5 +7,5 @@ bl = UserLabeler()
 
 
 @bl.message(Permission(), text=prefix_bot + " <command>")
-async def wrapper(message: Message):
+async def wrapper(message: Message, command):
     await edit_message(message, "Такой команды не существует")

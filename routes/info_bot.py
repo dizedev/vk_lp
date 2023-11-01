@@ -15,8 +15,6 @@ async def about_cmd(ctx: Message):
     version = repo.head.object.hexsha[:7]
     version_date = repo.head.object.committed_datetime.astimezone(pytz.timezone("Europe/Moscow"))
 
-    f'Текущая версия бота: {version} от {version_date}'
-
     await edit_message(ctx,
                        "Информация о боте 🤖:\n\n"
                        "Название бота 🤖: dize_lp\n"
