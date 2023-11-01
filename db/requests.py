@@ -36,3 +36,19 @@ async def get_user_token(user_id: int) -> Optional[db.models.UsersTokens]:
     except Exception as e:
         logger.exception(e)
         return None
+
+
+async def get_user_profile(user_id: int) -> Optional[db.models.UsersProfile]:
+    """
+    Получает профиль пользователя
+    :param user_id: VKID
+    """
+
+    try:
+        async with db.config.async_session() as session:
+            result = await session.execute(select(db.models.UsersProfile).where(db.models.UsersProfile.vkid == user_id))
+            return result.scalars().one_or_none()
+
+    except Exception as e:
+        logger.exception(e)
+        return None
