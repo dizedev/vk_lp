@@ -12,7 +12,7 @@ bl = UserLabeler()
         Permission(),
         text=[prefix_bot + " игра"],
 )
-async def game(message: Message):
+async def game_cmd(message: Message):
     loader = (
         '⬜⬜⬜⬜⬜⬜⬜⬜⬛⬛⬜⬜⬜⬜⬜⬜⬜',
         """
