@@ -1,9 +1,11 @@
+import vkbottle
 from vkbottle.user import Message
+import typing
 
 TOKEN = "test"
 prefix_bot = "хуй"
 prefix_dd = "дд"
-user = None
+user: typing.Optional[vkbottle.User] = None
 
 DB_LOGIN = "postgres"
 DB_PASSWORD = "MQLDUhDrF3cxj3zszsA63tZoSeSW"
