@@ -1,4 +1,4 @@
-from sqlalchemy import (BigInteger, Column, Identity, Text)
+from sqlalchemy import (BigInteger, Column, Identity, Text, JSON, TIMESTAMP)
 from sqlalchemy.orm import DeclarativeBase
 
 
@@ -22,10 +22,9 @@ class UsersProfile(Base):
     id = Column("id", BigInteger, Identity(start=1, increment=1, minvalue=1, cycle=False, cache=1), nullable=False,
                 primary_key=True)
     vkid = Column("vkid", BigInteger, nullable=False, unique=True)
-    # TODO: fill items below
-    achievements = Column()
-    trusted_ids = Column()
-    prefix = Column()
-    prefix_d = Column()
-    prefix_delete = Column()
-    last_login = Column()
+    achievements = Column("achievements", JSON)
+    trusted_ids = Column("trusted_ids", JSON)
+    prefix = Column("prefix", Text)
+    prefix_d = Column("prefix_d", Text)
+    prefix_delete = Column("prefix_delete", Text)
+    last_login = Column("last_login", TIMESTAMP)
