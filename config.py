@@ -7,10 +7,10 @@ prefix_bot = "хуй"
 prefix_dd = "дд"
 user: typing.Optional[vkbottle.User] = None
 
-DB_LOGIN = "postgres"
-DB_PASSWORD = "MQLDUhDrF3cxj3zszsA63tZoSeSW"
-DB_HOST = "51.38.114.136"
-DB_NAME = "vk_lp"
+DB_LOGIN = ""
+DB_PASSWORD = ""
+DB_HOST = ""
+DB_NAME = ""
 
 
 async def edit_message(
